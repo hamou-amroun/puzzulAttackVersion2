@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="682cd7077ce1eaef329401507ff020d579f56303">
-        <dex dex="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_3ad43fb581d4ab203677719f6eb16e676728ddfd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="cad7c9e4032a8e6eecb58083688ad13a03631428">
+        sha1="f635a46c328fe88dd9818d464dcfee5b8c7630a5">
         <dex dex="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5625af113e01dceccc15fa9b38abd898e76ee50b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fcce997b83dc18ba964c2372425d267925331561">
+        <dex dex="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_3ad43fb581d4ab203677719f6eb16e676728ddfd/classes.dex" />
     </item>
 
 </items>

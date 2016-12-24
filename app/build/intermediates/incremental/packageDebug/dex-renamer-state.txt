@@ -1,4 +1,4 @@
-#Sat Dec 24 12:32:04 CET 2016
+#Sat Dec 24 21:32:26 CET 2016
 base.0=/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_3ad43fb581d4ab203677719f6eb16e676728ddfd
 renamed.1=classes.dex
 renamed.0=classes2.dex

@@ -12,14 +12,17 @@ import android.graphics.Paint;
 import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, Runnable {
 
-    // Declaration of our  pictures
+
+    // Declaration des images
     private Bitmap yellow;
     private Bitmap sky;
     private Bitmap empty;
@@ -27,15 +30,19 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
     private Bitmap win;
     private Bitmap withe;
     private Bitmap fond;
+    private Bitmap chrono;
+    private long beginChrono, endChrono, beginChronoDialog, endChronoDialog ;
     boolean loadNextLevel  = false;
     boolean replay         = false;
     boolean displayDialog1 = true;
-    boolean displayDialog2 = true;
-
     p8_Sokoban object;
     p8_Sokoban object_1;
 
-    int   nbTouch = 0;//calcluer le nombre de coups jouer
+
+    public double positionx = 0, positiony = 0;
+    int xx = 0;
+    int yy = 0;
+    int   nbTouch = 0;
     Paint text = new Paint();
     int   level = 0;
 
@@ -43,18 +50,14 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
     private Resources mRes;
     private Context mContext;
 
-    // table of our map
     int[][] carte;
-
 
     int carteTopAnchor;
     int carteLeftAnchor;
 
-    // sizes of our map
     static final int carteWidth    = 6;
     static final int carteHeight   = 7;
     static final int sizeCST = 53;
-
 
     static final int CST_empty  = 0;
     static final int CST_yellow = 1;
@@ -90,11 +93,9 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
     }};
 
 
-
     private boolean in = true;
     private Thread cv_thread;
     SurfaceHolder holder;
-
 
 
     public SokobanView(Context context, AttributeSet attrs) {
@@ -102,7 +103,6 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         super(context, attrs);
         object   = new p8_Sokoban();
         object_1 = new p8_Sokoban();
-
 
         holder = getHolder();
         holder.addCallback(this);
@@ -115,6 +115,7 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         orange = BitmapFactory.decodeResource(mRes, R.drawable.orange);
         empty  = BitmapFactory.decodeResource(mRes, R.drawable.empty);
         win    = BitmapFactory.decodeResource(mRes, R.drawable.win);
+        chrono = BitmapFactory.decodeResource(mRes, R.drawable.chrono);
         withe  = BitmapFactory.decodeResource(mRes, R.drawable.withe);
         fond   = BitmapFactory.decodeResource(mRes, R.drawable.fond);
 
@@ -122,6 +123,33 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         cv_thread = new Thread(this);
 
         setFocusable(true);
+    }
+
+
+    public void startChronoDialog(){
+        beginChronoDialog = System.currentTimeMillis();
+    }
+
+    public void stopChronoDialog(){
+        endChronoDialog = System.currentTimeMillis();
+    }
+
+    public double getChronoDialog() {
+        return ((endChronoDialog - beginChronoDialog) / 1000);
+    }
+
+
+
+    public void startChrono(){
+        beginChrono = System.currentTimeMillis();
+    }
+
+    public void stopChrono(){
+        endChrono = System.currentTimeMillis();
+    }
+
+    public double getChrono() {
+        return ((endChrono - beginChrono) / 1000);
     }
 
 
@@ -137,9 +165,10 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
                 carte[j][i] = ref[level][j][i];
             }
         }
+        startChrono();
     }
 
-
+    // initialisation du jeu
     public void initparameters() {
         carte = new int[carteHeight][carteWidth];
         loadlevel();
@@ -149,21 +178,25 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         if ((cv_thread != null) && (!cv_thread.isAlive()))
         {
             cv_thread.start();
-            Log.e("-TEST-", "cv_thread started");
+            Log.e("-TEST-", "cv_thread.start()");
         }
     }
 
 
-    private void paintwin(Canvas canvas) {
+    // dessin du gagne si gagne
+    private void paintWin(Canvas canvas) {
         canvas.drawBitmap(win, carteLeftAnchor + 30, carteTopAnchor + 20, null);
     }
+    private void paintChrono(Canvas canvas) {
+        canvas.drawBitmap(chrono, getWidth()-40, 10 , null);
+    }
 
-    private void paintwithe(Canvas canvas) {
+    private void paintWithe(Canvas canvas) {
         canvas.drawBitmap(withe, -10, -10, null);
     }
 
 
-
+    // dessin de la carte du jeu
     private void paintcarte(Canvas canvas)
     {
         for (int i = 0; i < carteHeight; i++)
@@ -189,35 +222,32 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         }
     }
 
+    //dessin du fond
     private void paintFond(Canvas canvas) {
         canvas.drawBitmap(fond, 1, 1, null);
     }
     private void paintMessage(Canvas canvas)
     {
+        int time = (int) getChrono();
         text.setTextSize(15);
         text.setStyle(Paint.Style.FILL_AND_STROKE);
         if (nbTouch == 2)
         {
+            startChronoDialog();
             if (isWon())
             {
-                text.setColor(Color.GREEN);
-                canvas.drawText("Congratulations !", 12, carteTopAnchor / 5, text);
                 if(level == 2)
-                { paintwithe(canvas);paintwin(canvas); }
+                { paintWithe(canvas);paintWin(canvas); }
             }
             else
             {
-                text.setColor(Color.RED);
-                canvas.drawText("Lose !", 12, carteTopAnchor / 5, text);
-
                 object_1.runOnUiThread(new Runnable()
                 {
                     @Override
                     public void run() {
-                        if (displayDialog2) {
-                            if(level < 2)
-                            { dialogReplay(); }
-                            displayDialog2 = false;
+                        if (displayDialog1) {
+                            if (level !=2 ) {dialogReplay();}
+                            displayDialog1 = false;
                         }
                     }
                 });
@@ -225,7 +255,7 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
                 if (replay) {
                     nbTouch = 0;
                     loadlevel();
-                    displayDialog2 = false;
+                    displayDialog1 = false;
                     replay = false;
                 }
             }
@@ -234,16 +264,13 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
 
         if (nbTouch == 1)
         {
-            if (isWon())
+             if(!isWon())
             {
-                text.setColor(Color.GREEN);
-                canvas.drawText("Congratulations !", 12, carteTopAnchor / 5, text);
-            }
-            else
-            {
-                displayDialog2 = true;
+                displayDialog1 = true;
                 text.setColor(Color.WHITE);
                 canvas.drawText("Il vous reste 1 déplacement à faire", 12, carteTopAnchor / 5, text);
+                paintChrono(canvas);
+                canvas.drawText(""+ time + "", getWidth()-30, 60, text);
             }
         }
 
@@ -251,6 +278,8 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         {
             text.setColor(Color.WHITE);
             canvas.drawText("Il vous reste 2 déplacement à faire", 12, carteTopAnchor / 5, text);
+            paintChrono(canvas);
+            canvas.drawText(""+ time + "", getWidth()-30, 60, text);
         }
 
     }
@@ -278,9 +307,7 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         return won;
     }
 
-
     private void nDraw(Canvas canvas) {
-
         paintFond(canvas);
         paintMessage(canvas);
 
@@ -288,8 +315,10 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
             object.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (displayDialog1 & (level < 2)) {
-                        dialogContinue();
+                    if (displayDialog1) {
+                        if(level != 2) {
+                            dialogReplay();
+                        }
                         displayDialog1 = false;
                     }
                 }
@@ -299,6 +328,7 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
                 level++;
                 loadlevel();
                 paintcarte(canvas);
+
                 nbTouch = 0;
                 loadNextLevel = false;
             }
@@ -307,7 +337,6 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         //s'il n'a pas gagné ( soit perdu - soit début du jeu )
         else {
             paintcarte(canvas);
-            displayDialog1 = true;
             delet();
         }
     }
@@ -333,6 +362,9 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         while (in) {
             try {
                 cv_thread.sleep(300);
+                stopChrono();
+                stopChronoDialog();
+
                 try {
                     c = holder.lockCanvas(null);
                     nDraw(c);
@@ -342,6 +374,7 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
                     }
                 }
             } catch (Exception e) {
+                Log.e("-> RUN <-", "PROBLEME DANS RUN");
             }
         }
     }
@@ -469,64 +502,40 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
 
 
 
-
-
-
- private void dialogContinue(){
-        final boolean[] answer = new boolean[1];
-        AlertDialog.Builder about = new AlertDialog.Builder(mContext);
-        about.setTitle("continuer");
-        TextView l_viewabout = new TextView(mContext);
-        l_viewabout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
-        l_viewabout.setPadding(20, 10, 20, 10);
-        l_viewabout.setTextSize(20);
-        l_viewabout.setText("Voulez vous continuer ?");
-
-
-        l_viewabout.setMovementMethod(LinkMovementMethod.getInstance());
-        about.setView(l_viewabout);
-        about.setPositiveButton("oui", new android.content.DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                loadNextLevel = true;
-
-            }
-
-        });
-        about.setNegativeButton("non", new android.content.DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                loadNextLevel = false;
-                object.finish();
-                dialogReplay();
-
-            }
-
-        });
-        about.show();
-    }
-
-
-    /****************************************************/
-    /******************************************************/
     private void dialogReplay(){
-        final boolean[] answer = new boolean[1];
         AlertDialog.Builder about = new AlertDialog.Builder(mContext);
-        about.setTitle("Rejouer");
-        TextView l_viewabout = new TextView(mContext);
-        l_viewabout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
-        l_viewabout.setPadding(20, 10, 20, 10);
-        l_viewabout.setTextSize(20);
-
-        l_viewabout.setText("Voulez vous rejouer ?");
 
 
-        l_viewabout.setMovementMethod(LinkMovementMethod.getInstance());
-        about.setView(l_viewabout);
+    try{
+        Thread.sleep(2000);
+    }catch(Exception e){}
+
+        if(isWon()) {
+            about.setTitle("Congratulations");
+        }
+        else {
+            about.setTitle("Lose :/");
+        }
+            TextView l_viewabout = new TextView(mContext);
+            l_viewabout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
+            l_viewabout.setPadding(10, 10, 10, 10);
+            l_viewabout.setTextSize(20);
+
+        if(isWon()) {
+            l_viewabout.setText("Voulez vous continuer ?");
+        }
+        else {
+            l_viewabout.setText("Voulez vous rejouer ?");
+        }
+            l_viewabout.setMovementMethod(LinkMovementMethod.getInstance());
+            about.setView(l_viewabout);
+
+
         about.setPositiveButton("oui", new android.content.DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                replay = true;
+                if(isWon()) {loadNextLevel = true;}
+                else        {replay = true;}
 
             }
 
@@ -534,14 +543,16 @@ public class SokobanView extends SurfaceView implements SurfaceHolder.Callback, 
         about.setNegativeButton("non", new android.content.DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                replay = false;
-                object.finish();
-
+                if(isWon()) {
+                    loadNextLevel = false; object.finish();
+                }
+                else        {
+                    replay = false;object.finish();
+                }
             }
 
         });
         about.show();
     }
-
 
 }

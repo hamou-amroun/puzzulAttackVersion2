@@ -5,29 +5,29 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="28190524890834"
+    timestamp="54106008985488"
     token="-1720989867008473901"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="212" />
+        duration="94" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="44" />
+        duration="22" />
     <task
         name="verifier"
-        duration="1" />
+        duration="0" />
 
     <artifact
         location="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="28190524890834"
+        timestamp="54106008985488"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/outputs/apk/app-debug.apk"

@@ -20,6 +20,10 @@
         "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/fond.png"
     },
     {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/chrono.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/chrono.png"
+    },
+    {
         "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/orange.png",
         "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/orange.png"
     },
