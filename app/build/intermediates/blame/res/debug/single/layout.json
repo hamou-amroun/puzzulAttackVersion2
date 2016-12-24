@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/layout/menu.xml",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/layout/menu.xml"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/layout/main.xml",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/layout/main.xml"
+    }
+]

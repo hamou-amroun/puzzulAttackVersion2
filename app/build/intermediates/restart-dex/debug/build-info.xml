@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="xhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="28190524890834"
+    token="-1720989867008473901"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="212" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="44" />
+    <task
+        name="verifier"
+        duration="1" />
+
+    <artifact
+        location="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="28190524890834"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/icon.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/icon.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/sky.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/sky.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/win.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/win.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/yellow.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/yellow.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/fond.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/fond.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/orange.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/orange.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/withe.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/withe.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/empty.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/empty.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable/blue.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable/blue.png"
+    }
+]

@@ -1,0 +1,57 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:2:1-27:12
+	package
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:3:7-34
+		INJECTED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml
+		INJECTED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:5:7-32
+		INJECTED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml
+		INJECTED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml
+	android:versionCode
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:4:7-30
+		INJECTED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml
+		INJECTED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:6:22-78
+application
+ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:7:5-24:19
+	android:label
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:7:48-80
+	android:icon
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:7:18-47
+activity#p8.demo.p8sokoban.menu
+ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:8:9-16:20
+	android:screenOrientation
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:11:13-49
+	android:label
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:9:13-45
+	android:configChanges
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:10:13-48
+	android:name
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:8:19-39
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:12:13-15:29
+action#android.intent.action.MAIN
+ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:13:17-69
+	android:name
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:13:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:14:17-77
+	android:name
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:14:27-74
+activity#p8.demo.p8sokoban.p8_Sokoban
+ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:18:9-22:20
+	android:screenOrientation
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:21:13-49
+	android:label
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:19:13-45
+	android:configChanges
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:20:13-48
+	android:name
+		ADDED from /home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/AndroidManifest.xml:18:19-45

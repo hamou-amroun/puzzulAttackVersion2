@@ -1,0 +1,7 @@
+#Sat Dec 24 12:32:04 CET 2016
+base.0=/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_3ad43fb581d4ab203677719f6eb16e676728ddfd
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5625af113e01dceccc15fa9b38abd898e76ee50b/classes.dex
+base.1=/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5625af113e01dceccc15fa9b38abd898e76ee50b
+file.0=/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_3ad43fb581d4ab203677719f6eb16e676728ddfd/classes.dex

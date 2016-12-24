@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:weightSum="1">
+
+
+
+    <Button
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_height="50dp"
+        android:background="#55acee"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:text="Play"
+        android:id="@+id/play"/>
+
+    <Button
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_height="50dp"
+        android:background="#55acee"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:text="Instructions"
+        android:id="@+id/instructions"/>
+
+    <Button
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_height="50dp"
+        android:background="#55acee"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:text="About"
+        android:id="@+id/about"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_gravity="center"
+        android:background="#55acee">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="SON :"
+            android:layout_gravity="center"
+            android:textSize="15dp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/textView"
+            android:textColor="#fff" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:id="@+id/sound">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ON"
+                android:textSize="15dp"
+                android:checked="true"
+                android:id="@+id/sound_on"
+                android:textColor="#fff"
+                android:buttonTint="@android:color/holo_red_dark" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OFF"
+                android:textSize="15dp"
+                android:id="@+id/sound_off"
+                android:textColor="#fff"
+                android:buttonTint="@android:color/holo_red_dark" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_height="50dp"
+        android:background="#55acee"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:text="Exit"
+        android:id="@+id/exit"/>
+</LinearLayout>

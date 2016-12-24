@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="682cd7077ce1eaef329401507ff020d579f56303">
+        <dex dex="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_3ad43fb581d4ab203677719f6eb16e676728ddfd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="cad7c9e4032a8e6eecb58083688ad13a03631428">
+        <dex dex="/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5625af113e01dceccc15fa9b38abd898e76ee50b/classes.dex" />
+    </item>
+
+</items>

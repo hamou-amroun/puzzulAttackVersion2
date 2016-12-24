@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/zone_02.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/zone_02.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/zone_01.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/zone_01.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/icon.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/icon.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/zone_04.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/zone_04.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/diamant.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/diamant.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/block.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/block.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/zone_03.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/zone_03.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/vide.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/vide.png"
+    },
+    {
+        "merged": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/build/intermediates/res/merged/debug/drawable-hdpi/perso.png",
+        "source": "/home/akkou/Bureau/Etude/Android/PuzzleAttack/app/src/main/res/drawable-hdpi/perso.png"
+    }
+]
